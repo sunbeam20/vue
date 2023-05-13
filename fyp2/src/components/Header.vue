@@ -1,20 +1,20 @@
 <template>
   <header>
     <h1>hello world</h1>
-    <Button />
-    <Cart />
+    <toLogin />
+    <toSignup />
   </header>
 </template>
 
 <script>
-import Button from "./Button";
-import Cart from "./Cart";
+import toLogin from "./toLogin";
+import toSignup from "./toSignup";
 
 export default {
   name: "Header",
   components: {
-    Button,
-    Cart,
+    toLogin,
+    toSignup,
   },
 };
 </script>
