@@ -62,52 +62,39 @@ export default {
 
 <style scoped>
 .login-form {
-  width: 400px;
-  margin: auto;
-  padding: 20px;
+  width: 25%;
+  margin: 5em auto;
+  padding: 2em;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 2em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 1em;
 }
 
 .form-group {
-  margin: 10px 0;
-  width: 97%;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 label {
   display: block;
+  text-align: left;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
-  padding: 5px;
-  font-size: 16px;
+  width: 95%;
+  padding: 0.25em;
+  font-size: 1.5em;
   border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button.facebook {
-  background-color: #3b5998;
-}
-
-button.google {
-  background-color: #db4a39;
+  border-radius: 1em;
 }
 .create-account {
   text-align: center;
@@ -122,9 +109,5 @@ button.google {
 }
 .fg {
   text-align: center;
-}
-button:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 </style>

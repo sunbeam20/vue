@@ -17,19 +17,22 @@ export default {
 </script>
 
 <style scoped>
+div {
+  text-align: center;
+}
 .LoginBtn {
-  background-color: #c19520;
+  background-color: #614700ef;
   border: none;
   color: white;
-  padding: 10px 0px;
+  padding: 0.6em 0em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 0px;
+  font-size: 1.5em;
+  margin: 0.5em 0.1em 0.1em 0.1em;
   cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
+  border-radius: 1em;
+  width: 95%;
   font-weight: bold;
 }
 button:focus {

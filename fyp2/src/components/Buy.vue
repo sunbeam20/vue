@@ -19,11 +19,11 @@ export default {
 .buy-now {
   background-color: #ffffff;
   color: #000000;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border: 0.05em solid black;
+  border-radius: 1em;
+  padding: 0.75em 1em;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 

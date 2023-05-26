@@ -1,13 +1,19 @@
 <template>
   <div class="dropdown">
     <button
-      @click="toggleDropdown"
+      @mouseover="toggleDropdown(true)"
+      @mouseout="toggleDropdown(false, $event)"
       class="dropdown-toggle"
       :class="{ active: dropdownOpen }"
     >
       Categories
     </button>
-    <div v-if="dropdownOpen" class="dropdown-menu">
+    <div
+      v-if="dropdownOpen"
+      class="dropdown-menu"
+      @mouseover="toggleDropdown(true)"
+      @mouseout="toggleDropdown(false, $event)"
+    >
       <a class="dropdown-item" href="#">Category 1</a>
       <a class="dropdown-item" href="#">Category 2</a>
       <a class="dropdown-item" href="#">Category 3</a>
@@ -24,9 +30,14 @@ export default {
     };
   },
   methods: {
-    toggleDropdown() {
-      this.dropdownOpen = !this.dropdownOpen;
-      console.log("1");
+    toggleDropdown(hovering, event) {
+      if (
+        !event ||
+        !event.relatedTarget ||
+        !event.relatedTarget.closest(".dropdown-menu")
+      ) {
+        this.dropdownOpen = hovering;
+      }
     },
     hideDropdown(event) {
       if (!event.target.closest(".dropdown")) {
@@ -46,9 +57,9 @@ export default {
 <style scoped>
 button {
   width: auto;
-  height: 50px;
+  height: 3em;
   background-color: #46330000;
-  font-size: 18px;
+  font-size: 1.5em;
 }
 .dropdown {
   position: relative;
@@ -58,7 +69,7 @@ button {
 .dropdown-toggle {
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 0.75em 1.75em;
   cursor: pointer;
   outline: none;
 }
@@ -70,9 +81,9 @@ button {
 .dropdown-menu {
   position: absolute;
   z-index: 1;
-
+  border-top: 0.1em solid rgb(88, 88, 88);
   background-color: #fff;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0em 0.5em 1em 0em rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-menu.show {
@@ -81,7 +92,7 @@ button {
 
 .dropdown-item {
   display: block;
-  padding: 10px 20px;
+  padding: 1em 2em;
   color: #333;
   text-decoration: none;
 }

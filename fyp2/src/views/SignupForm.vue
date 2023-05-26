@@ -1,11 +1,11 @@
 <template>
-  <form>
+  <form v-on:submit.prevent="submitForm">
     <h1>Sign Up</h1>
     <input
       type="text"
       placeholder="Full Name"
       id="fullname"
-      v-model="fullName"
+      v-model="fullname"
       required
     />
     <input type="email" placeholder="Email Address" id="email" v-model="email" required />
@@ -48,7 +48,8 @@
         Female
       </label>
     </div>
-    <SignupBtn />
+    <!-- <SignupBtn /> -->
+    <button>signup</button>
     <p class="Log-in">Already have an account? <a href="/create-account">Log in</a></p>
 
     <div class="fg"><FacebookBtn /> <GoogleBtn /></div>
@@ -56,61 +57,99 @@
 </template>
 
 <script>
-import SignupBtn from "../components/SignupBtn.vue";
+// import SignupBtn from "../components/SignupBtn.vue";
 import FacebookBtn from "../components/FacebookBtn.vue";
 import GoogleBtn from "../components/GoogleBtn.vue";
+import axios from "axios";
+const instance = axios.create({
+  baseURL: "http://127.0.0.1:8000/api/",
+});
+
 export default {
   name: "SignupForm",
   components: {
     FacebookBtn,
     GoogleBtn,
-    SignupBtn,
+    // SignupBtn,
   },
 
   data() {
     return {
-      fullName: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: "",
-      contact: "",
+      fullname: "",
       email: "",
       password: "",
+      address: "",
+      city: "",
+      zip: "",
+      state: "",
+      contact: "",
+      gender: "",
     };
   },
   methods: {
     submitForm() {
-      // Handle form submission logic
+      instance
+        .post("customer/store", {
+          customer: {
+            name: this.fullname,
+            email: this.email,
+            password: this.password,
+            address: this.address,
+            city: this.city,
+            zip: this.zip,
+            state: this.state,
+            contact: this.contact,
+            gender: this.gender,
+          },
+        })
+        .then((response) => {
+          if (response.status == 201) {
+            this.name == "";
+            this.email == "";
+            this.password == "";
+            this.address == "";
+            this.city == "";
+            this.zip == "";
+            this.state == "";
+            this.contact == "";
+            this.gender == "";
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
 </script>
 <style scoped>
 form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 40px;
+  text-align: center;
+  max-width: 25%;
+  margin: 4em auto;
+  padding: 1em 2em 2em 2em;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 h1 {
   text-align: center;
+  margin-bottom: 1.5em;
 }
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5em;
   font-weight: bold;
 }
 input {
   border: 1px solid #ccc;
-  margin: 10px 10px 0px 10px;
+  margin: 1em 1em 0em 1em;
 }
 input,
 .input-group {
   display: block;
-  width: 95%;
+  margin: 1em 1em 0em 1em auto;
+  width: 90%;
   padding: 5px;
   border-radius: 5px;
 }
@@ -119,26 +158,9 @@ input:focus {
   outline: none;
   border-color: dodgerblue;
 }
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  background-color: dodgerblue;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-}
 .side-side {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .input-group {
@@ -152,7 +174,7 @@ button:focus {
 .radio-buttons {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 1em;
   justify-content: center;
   color: gray;
 }
@@ -161,7 +183,7 @@ button:focus {
   align-items: center;
 }
 .radio-buttons input[type="radio"] {
-  margin: 0px 10px;
+  margin: 0em 1em;
 }
 .fg {
   text-align: center;
@@ -176,5 +198,15 @@ button:focus {
 
 .Log-in a:hover {
   text-decoration: underline;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 90%;
+  padding: 0.25em;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
 }
 </style>

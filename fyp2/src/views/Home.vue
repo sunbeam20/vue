@@ -116,14 +116,14 @@ export { products };
   justify-content: left;
   /* start product from left*/
   align-items: center;
-  gap: 10px;
-  margin: 20px 100px 20px 100px;
-  padding: 20px 0px 20px 20px;
+  gap: 1em;
+  margin: 2em 10em 2em 10em;
+  padding: 2em 1em 2em 1em;
   flex-direction: row;
   background-color: bisque;
 }
 .view-more {
   width: 100%;
-  margin-right: 40px;
+  margin-right: 2em;
 }
 </style>

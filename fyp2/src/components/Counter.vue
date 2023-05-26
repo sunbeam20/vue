@@ -27,27 +27,27 @@ export default {
 
 <style scoped>
 .counter-button {
-  font-size: 1.2rem;
+  font-size: 0.5em;
   background-color: #ffffff;
   color: #000000;
-  border-radius: 4px;
-  padding: 0.5rem;
-  margin: 0rem;
+  border-radius: 20%;
+  padding: 0.5em;
+  margin: 0em;
   margin-top: 0%;
   cursor: pointer;
-  width: 30px;
+  width: 2em;
 }
 .counter-button:hover {
-  background-color: #000000;
+  background-color: #555555;
   color: #ffffff;
 }
 .counter-quantity {
-  font-size: 1.2rem;
-  margin: 0rem;
-  border: 2px solid;
-  padding: 0.5rem 1rem;
+  font-size: 0.5em;
+  margin: 0em;
+  border: 0.15em solid;
+  padding: 0.5em;
   border-radius: 4px;
-  width: 30px;
+  width: 2em;
   background-color: #ffffff;
 }
 </style>

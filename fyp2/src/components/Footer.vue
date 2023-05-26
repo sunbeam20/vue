@@ -76,20 +76,21 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #f7f7f7;
-  padding: 50px 50px 0px 50px;
+  padding: 3em 3em 0em 3em;
+  margin-top: 7em;
 }
 .footer-section,
 .find-payment {
-  margin: 0px 10px;
+  margin: 0em 1em;
 }
 .payment li,
 .find-us li,
 .ul li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 1em;
 }
 .ul li {
-  padding-right: 10px;
+  padding-right: 1em;
   border-right: 1px solid rgb(127, 127, 127);
 }
 .find-payment {
@@ -98,13 +99,13 @@ export default {
 }
 .bottom {
   width: 100%;
-  padding-bottom: 5px;
+  padding-bottom: 1em;
   text-align: right;
 }
 h3,
 .bottom p {
-  font-size: 14px;
-  margin-bottom: 15px;
+  font-size: 1.2em;
+  margin-bottom: 1em;
 }
 li {
   font-size: smaller;
@@ -114,10 +115,10 @@ ul {
   padding-left: 0;
 }
 ul li {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 p {
-  margin-bottom: 15px;
+  margin-bottom: 1em;
 }
 
 li a {
@@ -131,11 +132,11 @@ li:hover {
   cursor: pointer;
 }
 img {
-  width: 25px;
+  width: 3em;
   height: auto;
 }
 .payment img {
-  width: 40px;
+  width: 4em;
   height: auto;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
   background-color: #ffffff;
   color: #000000;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
 }
 </style>

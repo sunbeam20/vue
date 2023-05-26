@@ -67,11 +67,11 @@ export default {
 .product-card {
   flex-direction: column;
   align-items: center;
-  width: 150px;
+  width: 12em;
   height: auto;
-  max-height: 230px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  max-height: 19em;
+  border-radius: 1em;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -89,25 +89,25 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 10px;
+  padding: 1em;
   background-color: white;
 }
 
 .product-name {
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 1em;
+  margin-bottom: 0.7em;
 }
 .product-price {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 1.5em;
   font-weight: normal;
   color: #000000;
 }
 .product-price p {
-  margin: 0;
-  margin-right: 5px;
+  margin: 0px;
+  margin-right: 0.3em;
   text-align: center;
   font-weight: bold;
 }

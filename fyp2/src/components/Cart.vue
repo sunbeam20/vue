@@ -15,15 +15,15 @@ export default {
 button {
   color: white;
   width: auto;
-  height: 50px;
+  height: 3em;
   background-color: #46330000;
-  font-size: 18px;
+  font-size: 1em;
   border: none;
 }
 img {
-  border-radius: 10px;
+  border-radius: 1em;
   width: auto;
-  height: 30px;
+  height: 2.5em;
   cursor: pointer;
 }
 </style>

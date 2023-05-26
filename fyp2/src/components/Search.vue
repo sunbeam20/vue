@@ -18,7 +18,7 @@ export default {
 <style scoped>
 button img {
   width: auto;
-  height: 20px;
+  height: 2em;
   cursor: pointer;
 }
 
@@ -27,15 +27,15 @@ button img {
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
-  padding: 10px;
-  border-radius: 20px;
+  padding: 1em;
+  border-radius: 2em;
 }
 
 .search-input {
-  width: 200px;
+  width: 15em;
   border: none;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 1em;
   flex: 1;
 }
 .search-input:focus {
@@ -47,7 +47,7 @@ button img {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 1em;
 }
 
 .search-button:hover {

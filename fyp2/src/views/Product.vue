@@ -41,9 +41,9 @@ export default {
     return {
       products: products,
       myStyles: {
-        padding: "10px 20px",
+        padding: "1em 1em",
         border: "1px solid black",
-        borderRadius: "5px",
+        borderRadius: "1em",
       },
     };
   },
@@ -59,40 +59,39 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: left; /* start product from left*/
-  gap: 10px;
-  margin: 20px 100px 20px 100px;
-  padding: 20px 0px 20px 20px;
+  gap: 1em;
+  margin: 2em 10em 2em 10em;
+  padding: 2em 0em 2em 2em;
   flex-direction: row;
   background-color: bisque;
 }
 .grid-container {
-  margin: 0px 50px;
+  margin: 1em 4em;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 10px;
-  background-color: #ffffff;
-  width: 25%;
+  gap: 1em;
+  background-color: #ffffff00;
+  width: 20%;
+  height: auto;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 .side-grid {
   height: 100%;
   width: 50%;
-  margin-left: 100px;
+  margin-left: 10em;
 }
 .sgspace {
-  padding-bottom: 15px;
+  padding-bottom: 1em;
 }
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0);
   text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+  padding: 0em;
+  font-size: 1em;
 }
 
 .item1 {
   grid-column: 1 / span 4;
-  border: 1px solid rgb(132, 132, 132);
-  border-bottom: 3px solid;
 }
 .item1 img {
   width: 100%;

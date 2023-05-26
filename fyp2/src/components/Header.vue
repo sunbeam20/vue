@@ -37,12 +37,12 @@ export default {
 
 <style scoped>
 nav {
-  border-radius: 10px;
+  border-radius: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #463300e3;
-  padding-right: 20px;
+  padding-right: 2em;
 }
 .navleft {
   display: flex;
@@ -60,9 +60,9 @@ nav {
   align-items: center;
 }
 div img {
-  border-radius: 10px;
+  border-radius: 2em;
   width: auto;
-  height: 50px;
+  height: 4em;
   cursor: pointer;
 }
 </style>
