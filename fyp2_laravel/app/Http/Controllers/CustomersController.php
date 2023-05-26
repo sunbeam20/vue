@@ -43,7 +43,7 @@ class CustomersController extends Controller
         $newCustomer->save();
 
         return $newCustomer;
-        return $request->customer;
+        // return $request->customer;
     }
 
     /**
