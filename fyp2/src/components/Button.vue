@@ -7,7 +7,7 @@
         class="dropdown-toggle"
         :class="{ active: dropdownOpen }"
       >
-        <img :src="image" />{{ text }}
+        <img :src="image" class="hover-effect" />{{ text }}
       </button>
       <div
         v-if="dropdownOpen"
@@ -15,10 +15,10 @@
         @mouseover="toggleDropdown(true)"
         @mouseout="toggleDropdown(false, $event)"
       >
-        <router-link to="/LoginForm">
-          <p class="dropdown-item separate">Login</p>
+        <router-link to="/LoginForm" exact class="link">
+          <p class="dropdown-item">Login</p>
         </router-link>
-        <router-link to="/SignupForm">
+        <router-link to="/SignupForm" exact class="link">
           <p class="dropdown-item">SignUp</p>
         </router-link>
       </div>
@@ -99,17 +99,17 @@ img {
 .dropdown-menu.show {
   display: block;
 }
-
+.link {
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
 .dropdown-item {
-  display: inline-block;
-  padding: 1em;
-  margin: 0em 0.5em;
+  display: block;
+  padding: 1em 2em;
+  margin: 0em;
   color: #333;
   text-decoration: none;
-}
-.separate {
-  padding-right: 2em;
-  border-right: 1px solid rgb(110, 110, 110);
 }
 
 .dropdown-item:hover,

@@ -16,3 +16,12 @@ export default {
   },
 };
 </script>
+<style>
+img.hover-effect {
+  transition: transform 0.3s ease;
+}
+
+img.hover-effect:hover {
+  transform: scale(1.1);
+}
+</style>

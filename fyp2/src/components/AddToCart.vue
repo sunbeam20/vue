@@ -4,7 +4,7 @@
 -->
 <template>
   <button @click="addToCart" class="add-to-cart" :style="styleProp" :class="hoverClass">
-    <img :src="image" :style="imgStyleProp" />{{ textProp }}
+    <img :src="image" :style="imgStyleProp" class="hover-effect" />{{ textProp }}
   </button>
 </template>
 

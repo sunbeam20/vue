@@ -3,7 +3,7 @@
     <nav>
       <div class="navleft">
         <router-link to="/">
-          <img src="../assets/logo.png" alt="Logo" />
+          <img src="@/assets/logo.png" alt="Logo" />
         </router-link>
         <Categories />
       </div>

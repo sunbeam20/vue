@@ -1,8 +1,11 @@
 <template>
   <div class="product-card">
-    <div class="product-image">
-      <img :src="product.image" :alt="product.name" title="View" />
-    </div>
+    <router-link :to="{ name: 'Product', params: { id: product.id } }">
+      <div class="product-image">
+        <img :src="product.image" :alt="product.name" title="View" class="hover-effect" />
+      </div>
+    </router-link>
+
     <div class="product-details">
       <div class="product-name">
         {{ truncatedProductName }}
@@ -60,19 +63,18 @@ export default {
 </script>
 
 <style scoped>
-.hover-effect:hover {
-  background-color: bisque;
-  color: white;
-}
 .product-card {
   flex-direction: column;
   align-items: center;
   width: 12em;
   height: auto;
-  max-height: 19em;
   border-radius: 1em;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+}
+
+.product-image:hover {
+  cursor: pointer;
 }
 
 .product-image {
@@ -80,10 +82,12 @@ export default {
   height: 50%;
   object-fit: contain;
 }
+
 .product-image img {
   width: 100%;
   height: auto;
 }
+
 .product-details {
   display: flex;
   flex-direction: column;
@@ -97,6 +101,7 @@ export default {
   font-size: 1em;
   margin-bottom: 0.7em;
 }
+
 .product-price {
   display: flex;
   align-items: center;
@@ -105,12 +110,14 @@ export default {
   font-weight: normal;
   color: #000000;
 }
+
 .product-price p {
   margin: 0px;
   margin-right: 0.3em;
   text-align: center;
   font-weight: bold;
 }
+
 #sold {
   font-size: small;
   color: #585858;

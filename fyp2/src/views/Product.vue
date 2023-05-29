@@ -1,16 +1,16 @@
 <template>
   <div class="product-page">
     <div class="grid-container">
-      <div class="item1"><img :src="products[0].image" :alt="products[0].name" /></div>
-      <div class="item2"><img :src="products[0].image" :alt="products[0].name" /></div>
-      <div class="item3"><img :src="products[0].image" :alt="products[0].name" /></div>
-      <div class="item4"><img :src="products[0].image" :alt="products[0].name" /></div>
-      <div class="item5"><img :src="products[0].image" :alt="products[0].name" /></div>
+      <div class="item1"><img :src="newproduct.image" /></div>
+      <div class="item2"><img :src="newproduct.image" /></div>
+      <div class="item3"><img :src="newproduct.image" /></div>
+      <div class="item4"><img :src="newproduct.image" /></div>
+      <div class="item5"><img :src="newproduct.image" /></div>
     </div>
     <div class="side-grid">
-      <h1 class="sgspace">{{ products[0].name }}</h1>
+      <h1 class="sgspace">{{ newproduct.name }}</h1>
       <h3 class="sgspace">4.8k Sold</h3>
-      <h1 class="sgspace">Price {{ products[0].price }}</h1>
+      <h1 class="sgspace">Price {{ newproduct.price }}</h1>
       <h1 class="sgspace">Color</h1>
       <h1 class="sgspace">Size</h1>
       <h1 class="sgspace">Quantity <Counter /></h1>
@@ -25,11 +25,12 @@
 </template>
 
 <script>
-import { products } from "@/views/Home";
+const newproduct = [];
+
 import Counter from "../components/Counter.vue";
 import AddToCart from "../components/AddToCart.vue";
 import Buy from "../components/Buy.vue";
-
+import { products } from "./Home.vue";
 export default {
   name: "Product",
   components: {
@@ -37,15 +38,35 @@ export default {
     AddToCart,
     Buy,
   },
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      products: products,
       myStyles: {
         padding: "1em 1em",
         border: "1px solid black",
         borderRadius: "1em",
       },
+      products: products,
+      newproduct,
     };
+  },
+  created() {
+    const productId = this.id; // ID of the product you want to find
+    console.log(productId);
+    for (let i = 0; i < products.length; i++) {
+      if (productId == products[i].id) {
+        console.log(products[i].id);
+        console.log(products[i].name);
+        console.log(products[i].price);
+        console.log(products[i].image);
+        this.newproduct = products[i];
+      } else continue;
+    }
   },
 };
 </script>

@@ -1,8 +1,10 @@
 <template>
   <header>
-    <button type="button">
-      <img src="../assets/shopping-bag.png" />
-    </button>
+    <router-link to="/Cart">
+      <button type="button">
+        <img src="../assets/shopping-bag.png" class="hover-effect" />
+      </button>
+    </router-link>
   </header>
 </template>
 

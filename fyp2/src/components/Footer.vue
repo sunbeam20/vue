@@ -34,22 +34,22 @@
     <div class="find-payment">
       <h3>Find Us On</h3>
       <ul class="find-us">
-        <li><img src="../assets/facebook2.png" /></li>
-        <li><img src="../assets/instagram.png" /></li>
-        <li><img src="../assets/twitter.png" /></li>
-        <li><img src="../assets/youtube.png" /></li>
-        <li><img src="../assets/pinterest.png" /></li>
+        <li><img src="../assets/facebook2.png" class="hover-effect" /></li>
+        <li><img src="../assets/instagram.png" class="hover-effect" /></li>
+        <li><img src="../assets/twitter.png" class="hover-effect" /></li>
+        <li><img src="../assets/youtube.png" class="hover-effect" /></li>
+        <li><img src="../assets/pinterest.png" class="hover-effect" /></li>
       </ul>
     </div>
 
     <div class="find-payment">
       <h3>We Accept</h3>
       <ul class="payment">
-        <li><img src="../assets/cash-on-delivery.png" /></li>
-        <li><img src="../assets/visa.png" /></li>
-        <li><img src="../assets/paypal.png" /></li>
-        <li><img src="../assets/google-pay.png" /></li>
-        <li><img src="../assets/apple-pay.png" /></li>
+        <li><img src="../assets/cash-on-delivery.png" class="hover-effect" /></li>
+        <li><img src="../assets/visa.png" class="hover-effect" /></li>
+        <li><img src="../assets/paypal.png" class="hover-effect" /></li>
+        <li><img src="../assets/google-pay.png" class="hover-effect" /></li>
+        <li><img src="../assets/apple-pay.png" class="hover-effect" /></li>
       </ul>
     </div>
 
