@@ -49,8 +49,10 @@
       </label>
     </div>
     <!-- <SignupBtn /> -->
-    <button>signup</button>
-    <p class="Log-in">Already have an account? <a href="/create-account">Log in</a></p>
+    <div><button class="signupBtn">Signup</button></div>
+    <p class="Log-in">
+      Already have an account?<router-link to="/LoginForm">Log in</router-link>
+    </p>
 
     <div class="fg"><FacebookBtn /> <GoogleBtn /></div>
   </form>
@@ -208,5 +210,29 @@ input[type="tel"] {
   font-size: 1.2em;
   border: 1px solid #ccc;
   border-radius: 1em;
+}
+.signupBtn {
+  background-color: #614700ef;
+  border: none;
+  color: white;
+  padding: 0.7em 0em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0.5em 0.08em 0.1em 0.08em;
+  cursor: pointer;
+  border-radius: 1em;
+  width: 100%;
+  font-weight: bold;
+}
+
+div {
+  text-align: center;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 </style>

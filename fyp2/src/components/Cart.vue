@@ -1,8 +1,9 @@
 <template>
   <header>
-    <button type="button">
-      <img src="../assets/shopping-bag.png" />
-    </button>
+    <router-link to="/CartPage">
+      <button type="button">
+        <img src="../assets/shopping-bag.png" /></button
+    ></router-link>
   </header>
 </template>
 

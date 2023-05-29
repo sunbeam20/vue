@@ -1,7 +1,9 @@
 <template>
-  <Header />
-  <router-view></router-view>
-  <Footer />
+  <div class="app">
+    <Header />
+    <router-view></router-view>
+    <Footer />
+  </div>
 </template>
 
 <script>

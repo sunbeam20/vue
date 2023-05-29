@@ -16,51 +16,61 @@ import ProductCard from "../components/ProductCard";
 const products = [
   {
     name: "Luxury White Bottle Reusable Cheap",
+    selected: false,
     price: "$19.99",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 2",
+    selected: false,
     price: "$29.99",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 3",
+    selected: false,
     price: "$39.99",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 4",
+    selected: false,
     price: "$49.99",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 5",
+    selected: false,
     price: "$59.99",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 6",
+    selected: false,
     price: "$69",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 7",
+    selected: false,
     price: "$69",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 8",
+    selected: false,
     price: "$69",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 9",
+    selected: false,
     price: "$69",
     image: require("@/assets/1.png"),
   },
   {
     name: "Product 10",
+    selected: false,
     price: "$69",
     image: require("@/assets/1.png"),
   },
