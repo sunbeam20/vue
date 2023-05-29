@@ -4,9 +4,17 @@
     <div v-if="products.length === 0" class="cart-empty">Your cart is empty</div>
     <div v-else>
       <table class="cart-table">
-        <thead>
+        <thead class="tableHead">
           <tr>
-            <th><input type="checkbox" class="cart-checkbox" />All</th>
+            <th>
+              <input
+                type="checkbox"
+                v-model="selectAll"
+                @change="selectAllItems"
+                class="cart-checkbox all-checkbox"
+              />All
+            </th>
+
             <th>Item</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -15,7 +23,9 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in products" :key="index">
-            <td><input type="checkbox" class="cart-checkbox" /></td>
+            <td>
+              <input type="checkbox" v-model="item.selected" class="cart-checkbox" />
+            </td>
             <td class="img">
               <div class="image-container">
                 <img :src="item.image" :alt="item.name" />
@@ -38,17 +48,34 @@ import Counter from "@/components/Counter.vue";
 import { products } from "@/views/Home";
 export default {
   name: "CartPage",
+  components: { Counter },
   data() {
     return {
       products: products,
+      selectAll: false,
     };
   },
   computed: {
     cartTotal() {
       return this.products.reduce((total, item) => total + item.price * item.quantity, 0);
     },
+
+    allItemsSelected() {
+      return this.products.every((item) => item.selected);
+    },
   },
-  components: { Counter },
+  watch: {
+    selectAll(value) {
+      this.products.forEach((item) => {
+        item.selected = value;
+      });
+    },
+  },
+  methods: {
+    selectAllItems() {
+      this.selectAll = this.allItemsSelected;
+    },
+  },
 };
 </script>
 
@@ -58,6 +85,7 @@ export default {
   background-color: #f5f5f5;
   margin: 2em 3em 3em 3em;
 }
+
 .img img {
   width: 10em;
   height: auto;
@@ -118,5 +146,14 @@ export default {
   font-weight: bold;
   margin-top: 1.25em;
   text-align: right;
+}
+.tableHead {
+  font-size: 1.5em;
+}
+.all-checkbox {
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  vertical-align: middle;
 }
 </style>

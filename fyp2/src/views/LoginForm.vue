@@ -18,7 +18,8 @@
       </div>
       <LoginBtn />
       <p class="create-account">
-        Don't have an account yet? <a href="/create-account">Create Account</a>
+        Don't have an account yet?
+        <router-link to="/SignupForm">Create Account</router-link>
       </p>
       <p class="create-account"><a href="/forgot-password">Forgot your password?</a></p>
       <div class="fg"><FacebookBtn /> <GoogleBtn /></div>
