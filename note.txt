@@ -1,0 +1,8 @@
+* make model and migrations
+php artisan make:model Product -m  
+
+*run migrations
+php artisan migrate
+
+*make controller
+php artisan make:controller ProductController --resource

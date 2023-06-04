@@ -24,15 +24,15 @@ button img {
 
 .search-form {
   display: flex;
+  width: 20em;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
   padding: 1em;
-  border-radius: 2em;
+  border-radius: 10px;
 }
 
 .search-input {
-  width: 15em;
   border: none;
   background-color: transparent;
   font-size: 1em;

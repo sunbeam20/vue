@@ -2,14 +2,18 @@
   <header>
     <router-link to="/CartPage">
       <button type="button">
-        <img src="../assets/shopping-bag.png" /></button
-    ></router-link>
+        <img src="../assets/shopping-bag.png" class="hover-effect" />
+      </button>
+    </router-link>
   </header>
 </template>
 
 <script>
 export default {
   name: "Cart",
+  created() {
+    console.log("Inside Cart.vue");
+  },
 };
 </script>
 <style scoped>

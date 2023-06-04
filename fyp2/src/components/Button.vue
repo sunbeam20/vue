@@ -7,7 +7,7 @@
         class="dropdown-toggle"
         :class="{ active: dropdownOpen }"
       >
-        <img :src="image" />{{ text }}
+        <img :src="image" class="hover-effect" />{{ text }}
       </button>
       <div
         v-if="dropdownOpen"
@@ -15,10 +15,10 @@
         @mouseover="toggleDropdown(true)"
         @mouseout="toggleDropdown(false, $event)"
       >
-        <router-link to="/LoginForm">
-          <p class="dropdown-item separate">Login</p>
+        <router-link to="/LoginForm" exact class="link">
+          <p class="dropdown-item">Login</p>
         </router-link>
-        <router-link to="/SignupForm">
+        <router-link to="/SignupForm" exact class="link">
           <p class="dropdown-item">SignUp</p>
         </router-link>
       </div>
@@ -92,6 +92,7 @@ img {
   position: absolute;
   z-index: 1;
   border: 0.1em solid rgb(88, 88, 88);
+  border-radius: 5px;
   background-color: #fff;
   box-shadow: 0em 0.5em 1em 0em rgba(0, 0, 0, 0.2);
 }
@@ -99,22 +100,22 @@ img {
 .dropdown-menu.show {
   display: block;
 }
-
+.link {
+  text-decoration: none;
+  font-weight: bold;
+}
 .dropdown-item {
-  display: inline-block;
-  padding: 1em;
-  margin: 0em 0.5em;
+  display: block;
+  padding: 1em 2em;
+  margin: 0.5em 0.5em;
   color: #333;
   text-decoration: none;
-}
-.separate {
-  padding-right: 2em;
-  border-right: 1px solid rgb(110, 110, 110);
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: #f5f5f5;
+  background-color: #ebebeb;
   cursor: pointer;
+  border-radius: 5px;
 }
 </style>

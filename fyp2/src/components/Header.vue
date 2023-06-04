@@ -1,9 +1,9 @@
 <template>
-  <header>
+  <header class="sticky-header">
     <nav>
       <div class="navleft">
         <router-link to="/">
-          <img src="../assets/logo.png" alt="Logo" />
+          <img src="@/assets/logo.png" alt="Logo" />
         </router-link>
         <Categories />
       </div>
@@ -40,8 +40,11 @@ export default {
 </script>
 
 <style scoped>
+.sticky-header {
+  position: sticky;
+  top: 0;
+}
 nav {
-  border-radius: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,6 +60,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 10em;
 }
 .navright {
   display: flex;
