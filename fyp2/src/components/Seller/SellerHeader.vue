@@ -1,7 +1,11 @@
 <template>
   <header>
     <nav>
-      <router-link to="../SellerLogin"><p>hello world</p></router-link>
+      <div class="navleft">
+        <img src="../../assets/logo.png" alt="Logo" />
+
+        <h1>Seller Hub</h1>
+      </div>
     </nav>
   </header>
 </template>
@@ -27,20 +31,16 @@ nav {
   justify-content: flex-start;
   align-items: center;
 }
-.navcenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navright {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+
 div img {
   border-radius: 2em;
   width: auto;
   height: 4em;
   cursor: pointer;
+}
+h1 {
+  color: rgb(222, 179, 51);
+  font-size: 2em;
+  margin-left: 1em;
 }
 </style>

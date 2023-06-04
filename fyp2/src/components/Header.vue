@@ -11,6 +11,10 @@
         <Search />
       </div>
       <div class="navright">
+        <div>
+          <router-link to="/SellerLogin"> <button>Seller Hub</button></router-link>
+        </div>
+
         <Cart />
         <Button :image="require('@/assets/user.png')" />
       </div>
