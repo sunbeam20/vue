@@ -162,6 +162,7 @@ export { products, categories };
 }
 .view-more {
   width: 100%;
+  right: 1em;
   margin-right: 2em;
 }
 </style>

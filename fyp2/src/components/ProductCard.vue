@@ -18,7 +18,10 @@
           :styleProp="btnStyles"
           :hoverClass="'hover-effect'"
           :image="require('@/assets/add-to-cart.png')"
+          :key="product.id"
+          :product="product"
         />
+        <!-- ^ -->
       </div>
     </div>
   </div>
@@ -68,7 +71,7 @@ export default {
   align-items: center;
   width: 12em;
   height: auto;
-  border-radius: 1em;
+  border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
@@ -106,7 +109,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: normal;
   color: #000000;
 }

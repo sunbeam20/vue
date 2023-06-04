@@ -23,7 +23,7 @@ export default {
   border-radius: 1em;
   padding: 0.75em 1em;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 0.75em;
   font-weight: bold;
 }
 

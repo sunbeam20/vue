@@ -92,6 +92,7 @@ img {
   position: absolute;
   z-index: 1;
   border: 0.1em solid rgb(88, 88, 88);
+  border-radius: 5px;
   background-color: #fff;
   box-shadow: 0em 0.5em 1em 0em rgba(0, 0, 0, 0.2);
 }
@@ -101,20 +102,20 @@ img {
 }
 .link {
   text-decoration: none;
-  font-size: large;
   font-weight: bold;
 }
 .dropdown-item {
   display: block;
   padding: 1em 2em;
-  margin: 0em;
+  margin: 0.5em 0.5em;
   color: #333;
   text-decoration: none;
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: #f5f5f5;
+  background-color: #ebebeb;
   cursor: pointer;
+  border-radius: 5px;
 }
 </style>

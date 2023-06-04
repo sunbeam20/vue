@@ -1,7 +1,7 @@
 <template>
   <div class="cart">
     <h2>Your Cart</h2>
-    <div v-if="products.length === 0" class="cart-empty">Your cart is empty</div>
+    <div v-if="cartItems.length === 0" class="cart-empty">Your cart is empty</div>
     <div v-else>
       <table class="cart-table">
         <thead class="tableHead">
@@ -22,14 +22,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in products" :key="index">
+          <tr v-for="(item, index) in cartItems" :key="index">
             <td>
               <input type="checkbox" v-model="item.selected" class="cart-checkbox" />
             </td>
             <td class="img">
               <div class="image-container">
-                <img :src="item.image" :alt="item.name" />
-                <span class="item-name">{{ item.name }}</span>
+                <img :src="item.image" :alt="item.name" class="hover-effect" />
+                <span class="item-name hover-effect">{{ item.name }}</span>
               </div>
             </td>
             <td>{{ item.price }}</td>
@@ -44,29 +44,51 @@
 </template>
 
 <script>
+const cartItems = [];
+import { eventBus } from "../event.js";
 import Counter from "@/components/Counter.vue";
-import { products } from "@/views/Home";
 export default {
   name: "CartPage",
   components: { Counter },
   data() {
     return {
-      products: products,
       selectAll: false,
+      cartItems,
     };
+  },
+  created() {
+    // Listen for the "add-to-cart" event on the event bus
+
+    console.log("Inside Created");
+    if (eventBus) {
+      console.log("Inside if");
+      eventBus.on("add-to-cart", (product) => {
+        // Assign the received product prop to a data property
+
+        console.log("Inside on");
+        this.cartItems.push(product);
+        // Do something with the productData
+        console.log("Product received in OtherComponent:", this.cartItems);
+      });
+    } else {
+      console.error("Event bus not defined");
+    }
   },
   computed: {
     cartTotal() {
-      return this.products.reduce((total, item) => total + item.price * item.quantity, 0);
+      return this.cartItems.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
     },
 
     allItemsSelected() {
-      return this.products.every((item) => item.selected);
+      return this.cartItems.every((item) => item.selected);
     },
   },
   watch: {
     selectAll(value) {
-      this.products.forEach((item) => {
+      this.cartItems.forEach((item) => {
         item.selected = value;
       });
     },
@@ -85,9 +107,26 @@ export default {
   background-color: #f5f5f5;
   margin: 2em 3em 3em 3em;
 }
+.cart-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1.25em;
+}
+.cart-table th,
+.cart-table td {
+  padding: 0.6em;
+  text-align: left;
+}
+.cart-table th {
+  background-color: #ccc;
+  font-weight: bold;
+}
+.cart-table td {
+  border-bottom: 1px solid #ddd;
+}
 
 .img img {
-  width: 10em;
+  width: 8em;
   height: auto;
 }
 .image-container {
@@ -96,9 +135,6 @@ export default {
 .item-name {
   font-weight: bold;
   position: absolute;
-  top: 0;
-  left: 7;
-
   color: #000000;
   font-size: 1rem;
   padding: 0.5rem;
@@ -106,7 +142,6 @@ export default {
 .cart-checkbox {
   width: 1.5em;
   height: 1.5em;
-  margin-right: 0.5em;
   vertical-align: middle;
 }
 .cart h2 {
@@ -118,27 +153,6 @@ export default {
   font-size: 1.125em;
   color: #999;
   text-align: center;
-}
-
-.cart-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 1.25em;
-}
-
-.cart-table th,
-.cart-table td {
-  padding: 0.6em;
-  text-align: left;
-}
-
-.cart-table th {
-  background-color: #ccc;
-  font-weight: bold;
-}
-
-.cart-table td {
-  border-bottom: 1px solid #ddd;
 }
 
 .cart-total {

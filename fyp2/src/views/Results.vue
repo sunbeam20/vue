@@ -41,11 +41,12 @@
       </div>
       <div v-else>
         <div v-if="filteredProducts.length > 0" class="product-container">
-          <div v-for="product in filteredProducts" :key="product.id" class="product-item">
-            <img :src="product.image" :alt="product.name" class="product-image" />
-            <h5 class="product-name">{{ truncatedProductName(product.name) }}</h5>
-            <p class="product-price">{{ product.price }}</p>
-          </div>
+          <ProductCard
+            class="product-card"
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+          />
         </div>
         <div v-else>
           <p>No results found.</p>
@@ -57,7 +58,11 @@
 
 <script>
 import { products, categories } from "@/views/Home";
+import ProductCard from "../components/ProductCard";
 export default {
+  components: {
+    ProductCard,
+  },
   data() {
     return {
       products: products,
@@ -109,7 +114,7 @@ export default {
       // Simulated API call
       setTimeout(() => {
         this.isLoading = false;
-      }, 2000);
+      }, 200);
     },
     truncatedProductName(name) {
       const maxLength = 20;
@@ -168,36 +173,13 @@ export default {
   cursor: pointer;
 }
 .product-container {
-  margin-top: 1em;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1.25em;
-}
-
-.product-item {
-  padding-bottom: 1em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  background-color: white;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-
-.product-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 0.625em;
-}
-
-.product-name {
-  margin: 0;
-  text-align: center;
-  text-decoration: none;
-}
-
-.product-price {
-  margin: 0;
-  font-weight: bold;
+  gap: 1em;
+  margin-left: 1.5em;
+  padding: 2em 0em 2em 0em;
+  justify-content: flex-start;
 }
 </style>

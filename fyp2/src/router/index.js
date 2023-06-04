@@ -31,24 +31,30 @@ const routes = [
         path: '/SignupForm',
         name: 'SignupForm',
         component: SignupForm
-       }
-       {
+    },
+    {
+        path: '/Results',
+        name: 'Results',
+        component: Results,
+    },
+    {
         path: '/CartPage',
         name: 'CartPage',
-        component: CartPage
-       },
-       {
+        component: CartPage,
+        
+    },
+    {
         path: '/Checkout',
         name: 'Checkout',
         component: Checkout
-       },
-       {
+    },
+    {
         path: '/SellerLogin',
         name: 'SellerLogin',
         component: SellerLogin
-       },
-   
+    },
 
+]
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,

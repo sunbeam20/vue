@@ -3,20 +3,27 @@
     <h1>Login</h1>
     <form>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" v-model="email" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
+        <label class="label" for="email">Email</label>
         <input
+          class="input"
+          type="email"
+          id="email"
+          name="email"
+          v-model="email"
+          required
+        />
+        <label class="label" for="password">Password</label>
+        <input
+          class="input"
           type="password"
           id="password"
           name="password"
           v-model="password"
           required
         />
+        <button class="LoginBtn" @click.prevent="login()">Login</button>
       </div>
-      <LoginBtn />
+
       <p class="create-account">
         Don't have an account yet?
         <router-link to="/SignupForm">Create Account</router-link>
@@ -28,14 +35,12 @@
 </template>
 
 <script>
-import LoginBtn from "../components/LoginBtn";
 import FacebookBtn from "../components/FacebookBtn.vue";
 import GoogleBtn from "../components/GoogleBtn.vue";
 
 export default {
   name: "LoginForm",
   components: {
-    LoginBtn,
     FacebookBtn,
     GoogleBtn,
   },
@@ -57,45 +62,64 @@ export default {
     loginWithGoogle() {
       // Handle Google login logic
     },
+    login() {
+      // Handle login logic
+    },
   },
 };
 </script>
 
 <style scoped>
 .login-form {
-  width: 25%;
+  width: 20%;
   margin: 5em auto;
   padding: 2em;
   border: 1px solid #ccc;
-  border-radius: 2em;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 h1 {
   text-align: center;
   margin-bottom: 1em;
 }
+.login-form form {
+  display: block;
+  text-align: center;
+}
 
 .form-group {
-  width: 100%;
   text-align: center;
-  margin-bottom: 1em;
 }
 
-label {
+.label {
   display: block;
   text-align: left;
-  margin-left: 0.5em;
-  margin-bottom: 1em;
+  margin: 1em 0em 0.5em 0em;
 }
 
-input[type="email"],
-input[type="password"] {
-  width: 95%;
-  padding: 0.25em;
-  font-size: 1.5em;
+.input,
+.LoginBtn {
+  display: block;
+  text-align: center;
+  width: 100%; /* Adjust the width as needed */
   border: 1px solid #ccc;
-  border-radius: 1em;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 0.5em 0em;
+}
+.LoginBtn {
+  margin-top: 1em;
+  background-color: #614700ef;
+  color: white;
+  padding: 0.5em 0em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: large;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 .create-account {
   text-align: center;

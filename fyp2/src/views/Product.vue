@@ -9,11 +9,11 @@
     </div>
     <div class="side-grid">
       <h1 class="sgspace">{{ newproduct.name }}</h1>
-      <h3 class="sgspace">4.8k Sold</h3>
-      <h1 class="sgspace">Price {{ newproduct.price }}</h1>
-      <h1 class="sgspace">Color</h1>
-      <h1 class="sgspace">Size</h1>
-      <h1 class="sgspace">Quantity <Counter /></h1>
+      <p class="sgspace">4.8k Sold</p>
+      <p class="sgspace">Price {{ newproduct.price }}</p>
+      <p class="sgspace">Color</p>
+      <p class="sgspace">Size</p>
+      <p class="sgspace">Quantity <Counter /></p>
       <AddToCart
         :styleProp="myStyles"
         :hoverClass="'hover-effect'"
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       myStyles: {
-        padding: "1em 1em",
+        padding: "0.75em 1em",
         border: "1px solid black",
         borderRadius: "1em",
       },
@@ -65,6 +65,7 @@ export default {
         console.log(products[i].price);
         console.log(products[i].image);
         this.newproduct = products[i];
+        break;
       } else continue;
     }
   },
