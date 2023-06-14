@@ -18,7 +18,7 @@
             />
           </span>
           <ul v-show="isActive['Shipment']">
-            <li class="lists" @click.stop>My Shipment</li>
+            <li @click="selectedLink = 'My-Shipment'" class="lists" @click.stop>My Shipment</li>
             <li class="lists" @click.stop>Mass Shipping</li>
             <li class="lists" @click.stop>Shipping Settings</li>
           </ul>
@@ -105,19 +105,17 @@
       </ul>
     </div>
     <AddProduct v-if="selectedLink == 'Add-product'" />
-    <Dashboard v-else />
   </div>
 </template>
 
 <script>
 import AddProduct from "@/components/Seller/AddProduct.vue";
-import Dashboard from "@/components/Seller/Dashboard.vue";
 export default {
   name: "SellerHome",
   components: {
     AddProduct,
-    Dashboard,
   },
+
   data() {
     return {
       selectedLink: null,
