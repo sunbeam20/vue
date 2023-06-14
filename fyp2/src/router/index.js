@@ -5,6 +5,7 @@ import LoginForm from "../views/LoginForm.vue"
 import SignupForm from "../views/SignupForm.vue"
 import CartPage from "../views/CartPage.vue"
 import Checkout from "../views/Checkout.vue"
+import CustomerProfile from "../views/CustomerProfile.vue"
 import SellerLogin from "../views/Seller/SellerLogin.vue"
 import SellerSignup from "../views/Seller/SellerSignup.vue"
 import SellerHome from "../views/Seller/SellerHome.vue"
@@ -26,21 +27,19 @@ const routes = [
         path: '/Product/:id',
         name: 'Product',
         component: Product,
-        props: true,,
+        props: true,
         meta: {
             group: 'customer'
         }
     },
-    
     {
         path: '/LoginForm',
         name: 'LoginForm',
-        component: LoginForm,,
+        component: LoginForm,
         meta: {
             group: 'customer'
         }
     },
-
     {
         path: '/SignupForm',
         name: 'SignupForm',
@@ -53,6 +52,9 @@ const routes = [
         path: '/Results',
         name: 'Results',
         component: Results,
+        meta: {
+            group: 'customer'
+        },
     },
     {
         path: '/CartPage',
@@ -61,12 +63,20 @@ const routes = [
         meta: {
             group: 'customer'
         },
-        
+
     },
     {
         path: '/Checkout',
         name: 'Checkout',
         component: Checkout,
+        meta: {
+            group: 'customer'
+        }
+    },
+    {
+        path: '/Profile',
+        name: 'Profile',
+        component: CustomerProfile,
         meta: {
             group: 'customer'
         }
@@ -78,29 +88,29 @@ const routes = [
         meta: {
             group: 'seller'
         }
-       },
-       {
+    },
+    {
         path: '/SellerSignup',
         name: 'SellerSignup',
         component: SellerSignup,
         meta: {
             group: 'seller'
-    },
+        },
     },
 
     {
-    path: '/SellerHome',
-    name: 'SellerHome',
-    component: SellerHome,
-    meta: {
-        group: 'seller'
-    
-    }, 
+        path: '/SellerHome',
+        name: 'SellerHome',
+        component: SellerHome,
+        meta: {
+            group: 'seller'
+
+        },
     },
-   
-    
-    
-      
+
+
+
+
 
 ]
 const router = createRouter({

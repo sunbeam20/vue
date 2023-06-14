@@ -132,11 +132,11 @@ export default {
 <style scoped>
 form {
   text-align: center;
-  max-width: 30%;
+  max-width: 25%;
   margin: 4em auto;
   padding: 1em 2em 2em 2em;
   border: 1px solid #ccc;
-  border-radius: 1em;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 h1 {
@@ -171,6 +171,7 @@ input:focus {
 }
 
 .input-group {
+  text-align: center;
   width: 45%;
 }
 
@@ -197,25 +198,24 @@ input[type="email"],
 input[type="password"],
 input[type="tel"] {
   width: 90%;
-  padding: 0.25em;
-  font-size: 1.2em;
+  padding: 0.4em;
+  font-size: 1em;
   border: 1px solid #ccc;
-  border-radius: 1em;
+  border-radius: 5px;
 }
 .signupBtn {
+  margin-top: 1em;
   background-color: #614700ef;
   border: none;
   color: white;
-  padding: 0.7em 0em;
+  padding: 1em 0em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.5em;
-  margin: 0.5em 0.08em 0.1em 0.08em;
+  font-size: 1em;
   cursor: pointer;
-  border-radius: 1em;
-  width: 100%;
-  font-weight: bold;
+  border-radius: 5px;
+  width: 90%;
 }
 
 div {

@@ -24,7 +24,7 @@ button img {
 
 .search-form {
   display: flex;
-  width: 20em;
+  width: 100%;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;

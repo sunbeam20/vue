@@ -15,8 +15,9 @@
           v-model="password"
           required
         />
+        <button class="LoginBtn">Login</button>
       </div>
-      <LoginBtn />
+
       <p class="create-account">
         Don't have an account yet?
         <router-link to="/SellerSignup">Create Account</router-link>
@@ -28,14 +29,12 @@
 </template>
 
 <script>
-import LoginBtn from "../../components/LoginBtn";
 import FacebookBtn from "../../components/FacebookBtn.vue";
 import GoogleBtn from "../../components/GoogleBtn.vue";
 
 export default {
   name: "SellerLogin",
   components: {
-    LoginBtn,
     FacebookBtn,
     GoogleBtn,
   },
@@ -63,11 +62,11 @@ export default {
 
 <style scoped>
 .login-form {
-  width: 25%;
+  width: 20%;
   margin: 5em auto;
   padding: 2em;
   border: 1px solid #ccc;
-  border-radius: 2em;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -86,17 +85,30 @@ label {
   display: block;
   text-align: left;
   margin-left: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 input[type="email"],
 input[type="password"] {
   width: 95%;
-  padding: 0.25em;
+  padding: 0.2em;
+  margin-bottom: 0.5em;
   font-size: 1.5em;
   border: 1px solid #ccc;
-  border-radius: 1em;
+  border-radius: 5px;
 }
+.LoginBtn {
+  font-size: 1.5em;
+  margin-top: 1em;
+  padding: 0.4em;
+  width: 98%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #614700ef;
+  color: white;
+  cursor: pointer;
+}
+
 .create-account {
   text-align: center;
 }

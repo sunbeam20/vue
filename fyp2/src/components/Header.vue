@@ -42,6 +42,7 @@ export default {
 <style scoped>
 .sticky-header {
   position: sticky;
+  z-index: 9999;
   top: 0;
 }
 nav {
@@ -72,5 +73,17 @@ div img {
   width: auto;
   height: 4em;
   cursor: pointer;
+}
+button {
+  width: auto;
+  height: 3em;
+  background-color: #46330000;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: underline;
 }
 </style>

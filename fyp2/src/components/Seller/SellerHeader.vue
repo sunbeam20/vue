@@ -1,10 +1,13 @@
 <template>
-  <header>
+  <header class="sticky-header">
     <nav>
       <div class="navleft">
-        <img src="../../assets/logo.png" alt="Logo" />
-
-        <h1>Seller Hub</h1>
+        <router-link to="/">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </router-link>
+        <router-link to="/SellerHome" exact class="link">
+          <h1>Seller Hub</h1>
+        </router-link>
       </div>
     </nav>
   </header>
@@ -18,8 +21,11 @@ export default {
 </script>
 
 <style scoped>
+.sticky-header {
+  position: sticky;
+  top: 0;
+}
 nav {
-  border-radius: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,10 +43,13 @@ div img {
   width: auto;
   height: 4em;
   cursor: pointer;
+  padding: 0.2em;
 }
 h1 {
   color: rgb(222, 179, 51);
-  font-size: 2em;
   margin-left: 1em;
+}
+.link {
+  text-decoration: none;
 }
 </style>
