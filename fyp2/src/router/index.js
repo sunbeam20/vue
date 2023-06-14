@@ -26,7 +26,7 @@ const routes = [
         path: '/Product/:id',
         name: 'Product',
         component: Product,
-        props: true,,
+        props: true,
         meta: {
             group: 'customer'
         }
@@ -35,7 +35,7 @@ const routes = [
     {
         path: '/LoginForm',
         name: 'LoginForm',
-        component: LoginForm,,
+        component: LoginForm,
         meta: {
             group: 'customer'
         }

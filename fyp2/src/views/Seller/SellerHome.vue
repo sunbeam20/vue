@@ -6,7 +6,7 @@
           <span><img src="../../assets/shipment.png" />Shipment</span>
 
           <ul>
-            <li>My Shipment</li>
+            <li @click="selectedLink = 'My-Shipment'">My Shipment</li>
             <li>Mass Shipping</li>
             <li>Shipping Settings</li>
           </ul>
@@ -52,16 +52,20 @@
       </ul>
     </div>
     <AddProduct v-if="selectedLink == 'Add-product'" />
+    <MyShipment v-if="selectedLink == 'My-Shipment'" />
   </div>
 </template>
 
 <script>
 import AddProduct from "@/components/Seller/AddProduct.vue";
+import MyShipment from "@/components/Seller/MyShipment.vue";
 export default {
   name: "SellerHome",
   components: {
     AddProduct,
+    MyShipment,
   },
+
   data() {
     return {
       selectedLink: null,
